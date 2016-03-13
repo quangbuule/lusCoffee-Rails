@@ -1,0 +1,33 @@
+.portal.index
+  = render partial: "layouts/cover"
+  .dish-container.container
+    .h2
+      Menu
+    .filter
+      .query-txt-wrapper
+        %form{action: root_path}
+          %input.form-control{name: "q", placeholder: "Search for beverages...", value: params[:q]}
+      .sort-label
+        sort by
+      %a.btn{href: url_for(params.merge sort: :view_desc), class: params[:sort] == :view_desc.to_s && "active"}
+        %i.fa.fa-mouse-pointer
+        %i.fa.fa-angle-double-down.icon
+      %a.btn{href: url_for(params.merge sort: :price_desc), class: params[:sort] == :price_desc.to_s && "active"}
+        %i.fa.fa-usd
+        %i.fa.fa-angle-double-down.icon
+      %a.btn{href: url_for(params.merge sort: :price_asc), class: params[:sort] == :price_asc.to_s && "active"}
+        %i.fa.fa-usd
+        %i.fa.fa-angle-double-up.icon
+      %a.btn{href: url_for(params.merge sort: :name_desc), class: params[:sort] == :name_desc.to_s && "active"}
+        %i.fa.fa-font
+        %i.fa.fa-angle-double-down.icon
+      %a.btn{href: url_for(params.merge sort: :name_asc), class: params[:sort] == :name_asc.to_s && "active"}
+        %i.fa.fa-font
+        %i.fa.fa-angle-double-up.icon
+      - if params[:sort] != nil
+        %a.btn{href: url_for(params.merge sort: nil)}
+          %i.fa.fa-remove
+    .dishes
+      - @dishes.each do |dish|
+        = render partial: "portal/dish", locals: {dish: dish}
+  = render partial: "portal/order_button"

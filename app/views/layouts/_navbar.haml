@@ -1,0 +1,12 @@
+%nav.navbar.navbar-dark.bg-inverse
+  .container
+    %a.navbar-brand{href: root_path} lusCoffee
+    %ul.nav.navbar-nav
+      - Dish.sections.each do |section, _|
+        %li.nav-item{class: params[:section].eql?(section) && "active"}
+          %a.nav-link{href: url_for(section: section)}
+            = Dish.section_name(section.to_sym)
+
+      %li.nav-item{class: current_page?(contact_us_path) && "active"}
+        %a.nav-link{href: contact_us_path}
+          Contact us

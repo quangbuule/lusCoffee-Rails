@@ -1,0 +1,21 @@
+.dish{id: "dish-#{dish.id}", 'aria-dish-id': dish.id}
+  = link_to controller: :dishes, action: :show, id: dish.id  do
+    .photo{style: "background-image: url('#{dish.image_url}');"}
+  .container-1
+    .dish-info
+      .h5.name
+        = dish.name
+        .view-count
+          %i.fa.fa-mouse-pointer
+          = dish.view_count
+      .price
+        = "₫#{number_with_precision(dish.price, precision: 0, delimiter: ',')}"
+    .order-wrapper
+      .order-btn.btn.btn-secondary
+        %i.fa.fa-cart-plus
+      .order-counter
+        %button.btn.btn-secondary.eliminate-btn{:type => "button"} -
+        %input.count-txt.form-control{:type => "text", readonly: true}
+        %button.btn.btn-secondary.add-btn{:type => "button"} +
+:javascript
+  new DishComponent(document.getElementById('dish-#{dish.id}'))

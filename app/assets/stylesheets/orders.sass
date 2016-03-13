@@ -1,0 +1,57 @@
+.orders
+  > .container
+    padding-top: 2rem
+    padding-bottom: 2rem
+
+  &.show
+    .dish-table
+      .dish
+        display: flex
+        align-items: center
+        border-top: 1px solid $table-border-color
+        padding-top: 0.5rem
+        padding-bottom: 0.5rem
+        font-weight: 300
+
+        &:hover
+          background-color: $table-bg-hover
+
+        .index
+          width: 2rem
+
+        .thumb-wrapper
+          width: 3rem
+          vertical-align: middle
+          padding: 0
+
+          .thumb
+            width: 2.5rem
+            height: 2.5rem
+            background: center no-repeat
+            background-size: cover
+
+        .name
+          flex: 1
+
+        .order-counter
+          display: flex
+          width: 8em
+          margin-right: 1rem
+
+          .btn:not(:hover)
+            background-color: transparent
+
+          input[type="text"]
+            flex: 1
+            background: white
+            text-align: center
+
+        .price
+          margin-left: auto
+          width: 5rem
+
+      .total
+        padding-left: 2rem
+
+        .price
+          font-weight: 500

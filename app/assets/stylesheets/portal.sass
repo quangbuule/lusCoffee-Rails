@@ -1,0 +1,86 @@
+.portal.index
+
+  .dish-container
+    padding-top: 2rem
+    padding-bottom: 2rem
+
+    .filter
+      .query-txt-wrapper
+        flex: 1
+        margin-right: 1rem
+
+    .dishes
+      @extend .row
+      margin-top: -1em
+
+      .dish
+        @extend .col-xs-6
+        @extend .col-sm-4
+        margin-top: 2rem
+
+      .dish
+        .photo
+          position: relative
+          padding-bottom: 133%
+          background: center no-repeat
+          background-size: cover
+          overflow-y: hidden
+
+          &:hover
+            opacity: 0.84
+
+        .container-1
+          display: flex
+
+          .dish-info
+            flex: 1
+
+            .name
+              font-weight: 200
+              margin-top: 1rem
+
+              .view-count
+                display: inline-block
+                margin-left: 1rem
+                font-size: 0.8rem
+
+          .order-wrapper
+            margin-top: 1rem
+
+            .order-btn
+              padding: 0.2rem 0.7rem
+
+            .order-counter
+              display: none
+              width: 8em
+
+              input[type="text"]
+                flex: 1
+                background: white
+                text-align: center
+
+        &.has-order .container-1 .order-wrapper
+          .order-btn
+            display: none
+
+          .order-counter
+            display: flex
+
+
+.portal.contact-us
+  > .container
+    padding-top: 2rem
+    padding-bottom: 2rem
+
+    .container-1
+      display: flex
+
+      .contact-details
+        flex: 1
+        font-weight: 300
+
+        .h3
+          font-size: 1rem
+          font-weight: 500
+
+      .map-container

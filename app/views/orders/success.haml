@@ -1,0 +1,8 @@
+.orders.success#success-order
+  = render partial: "layouts/cover"
+  .container
+    .h2 Sucessfully
+    .alert.alert-success
+      Your chosen ones are delivering to you. Thanks for using our service.
+:javascript
+  new OrderSuccessComponent(document.getElementById('success-order'))

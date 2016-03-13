@@ -1,0 +1,53 @@
+.dishes.show
+  .h2 .view-count
+    display: inline-block
+    margin-left: 1rem
+    font-size: 0.8rem
+
+  > .container
+    padding-top: 2rem
+    padding-bottom: 2rem
+
+    .container-1
+      display: flex
+
+      .figure
+        margin-right: 1rem
+        width: 10rem
+
+        img
+          width: 100%
+
+      .container-2
+        flex: 1
+
+        .container-3
+          display: flex
+
+          .dish-info
+            flex: 1
+
+          .order-wrapper
+            margin-top: 1rem
+
+            .order-btn
+              padding: 0.2rem 0.7rem
+
+            .order-counter
+              display: none
+              width: 8em
+
+              input[type="text"]
+                flex: 1
+                background: white
+                text-align: center
+
+        .description
+          font-weight: 300
+
+  &.has-order .container-1 .container-2 .container-3 .order-wrapper
+    .order-btn
+      display: none
+
+    .order-counter
+      display: flex

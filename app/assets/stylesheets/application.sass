@@ -1,0 +1,137 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ */
+
+@import "./_variables"
+@import "bootstrap"
+@import "font-awesome-sprockets"
+@import "font-awesome"
+@import "*"
+
+body
+
+.navbar
+  border-radius: 0
+  background-color: #573521
+
+  .container
+    height: 3rem
+    display: flex
+    align-items: center
+
+  .navbar-brand
+    font-weight: 100
+
+  .nav-item > .nav-link
+    font-size: 0.7rem
+    text-transform: uppercase
+
+.flash-info
+  display: flex
+  height: 1.7rem
+  background-color: #fba930
+  color: white
+  font-size: 0.7rem
+  font-weight: 500
+  text-transform: uppercase
+
+  .container
+    flex: 1
+    display: flex
+    align-items: center
+
+.brand-cover
+  width: 100%
+
+.footer
+  color: white
+  position: relative
+  background-color: #301102
+  text-align: center
+  line-height: 2rem
+  font-weight: 300
+
+.cover
+  position: relative
+  height: 30rem
+  background: url("http://www.shemazing.net/wp-content/uploads/2015/07/1437047201_bag-coffee-beans-shoulder-cup.jpg") center no-repeat
+  background-size: cover
+
+  .slogan
+    position: absolute
+    top: 1rem
+    left: 6rem
+    font-size: 2rem
+    font-weight: 100
+    color: rgba(255, 255, 255, 0.64)
+
+  &:after
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    height: 12px
+    content: ''
+    background: image-url("zz-bg.png")
+    background-size: 24px auto
+
+.filter
+  display: flex
+  justify-content: flex-end
+  align-items: center
+
+  .sort-label
+    font-weight: 300
+    font-size: 0.8rem
+    margin-right: 1rem
+
+  .btn
+    font-size: 1em
+    width: 50px
+    padding: 0
+    color: $body-color
+
+    &:hover
+      opacity: 0.54
+
+    &.active
+      @extend .btn-secondary
+
+.btn
+  border: none
+
+.h2
+  font-weight: 200
+
+#order-button
+  position: fixed
+  right: 0
+  bottom: 0
+  z-index: 1
+  text-align: center
+
+  .container-1
+    display: flex
+    background: #000
+    color: white
+    transform: translateX(100%)
+    transition: transform 0.2s ease
+
+    .indicator
+      padding: 0.5rem 1rem
+
+    .count
+      position: relative
+      top: -0.2rem
+
+  &.has-order .container-1
+    transform: translateX(0)

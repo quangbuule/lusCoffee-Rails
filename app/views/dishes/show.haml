@@ -1,0 +1,29 @@
+.dishes.show#show-dish{'aria-dish-id': @dish.id}
+  = render partial: "layouts/cover"
+  .container
+    .container-1
+      .figure
+        %img{src: @dish.image_url}
+      .container-2
+        .container-3
+          .dish-info
+            .h2
+              = @dish.name
+              .view-count
+                %i.fa.fa-mouse-pointer
+                = @dish.view_count
+            .price
+              = "₫#{number_with_precision(@dish.price, precision: 0, delimiter: ',')}"
+          .order-wrapper
+            .order-btn.btn.btn-secondary
+              %i.fa.fa-cart-plus
+            .order-counter
+              %button.btn.btn-secondary.eliminate-btn{:type => "button"} -
+              %input.count-txt.form-control{:type => "text", readonly: true}
+              %button.btn.btn-secondary.add-btn{:type => "button"} +
+
+        .description
+          = @dish.description
+:javascript
+  new DishComponent(document.getElementById('show-dish'))
+= render partial: "portal/order_button"

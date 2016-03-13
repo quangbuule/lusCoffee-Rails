@@ -1,0 +1,54 @@
+.orders.show#show-order
+  = render partial: "layouts/cover"
+  .container
+    .h2 Your order
+    - if @order.errors.any?
+      .alert.alert-danger
+        - @order.errors.full_messages.each do |message|
+          %div
+            .fa.fa-angle-right
+            = message
+
+    = form_for @order, url: order_path do |f|
+      .row#order-form
+        .col-lg-7.col-xs-12.pull-right
+          .form-group
+            .dish-table
+              %label &nbsp;
+              - @dishes.each_with_index do |dish, i|
+                .dish{"aria-price": dish.price}
+                  .index
+                    = "#{i + 1}."
+                  .thumb-wrapper
+                    .thumb{style: "background-image: url('#{dish.image_url}')"}
+                  .name
+                    = dish.name
+                  .order-counter
+                    %button.btn.btn-secondary.eliminate-btn{:type => "button"} -
+                    %input.count-txt.form-control{:type => "text", readonly: true, name: "d[#{dish.id}]", value: dish.count}
+                    %button.btn.btn-secondary.add-btn{:type => "button"} +
+                  .price
+                    = "₫#{number_with_precision(dish.price * dish.count, precision: 0, delimiter: ',')}"
+              .dish.total
+                .shipping
+                  + đ20,000 (Shipping)
+                .price
+                  = "đ#{number_with_precision(@total, precision: 0, delimiter: ',')}"
+        .col-lg-5.col-xs-12.pull-left
+          .form-group
+            = f.label :customer_name, "Your name:"
+            = f.text_field :customer_name, class: 'form-control', autocomplete: false
+          .form-group
+            = f.label :customer_email, "Your email address:"
+            = f.text_field :customer_email, class: 'form-control'
+          .form-group
+            = f.label :customer_phone, "Your phone number:"
+            = f.text_field :customer_phone, class: 'form-control'
+          .form-group
+            = f.label :customer_address, "Your address:"
+            = f.text_field :customer_address, class: 'form-control'
+          .form-group
+            .btn.btn-secondary Cancel
+            = f.submit class: 'btn btn-primary', type: 'submit'
+      :javascript
+        new OrderFormComponent(document.getElementById('order-form'))
