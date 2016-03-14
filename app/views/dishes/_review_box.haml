@@ -14,6 +14,7 @@
         .form-group
           = f.text_area :content, placeholder: "Your review", class: "form-control"
         = f.hidden_field :dish_id
+        = f.hidden_field :point
         = f.submit "Post review", class: "btn btn-primary"
 :javascript
   new ReviewBoxComponent(Array.prototype.slice.call(document.querySelectorAll('.review-box'), -1)[0])

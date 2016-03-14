@@ -19,7 +19,9 @@ ReviewBoxComponent.prototype.initialize = function() {
     });
 
     $(el).on('click', function () {
-      this.point = idx + 1;
+      var nextPoint = idx + 1;
+      this.point = nextPoint === this.point ? 0 : nextPoint;
+      this.$.find('input[name="review[point]"]').val(this.point);
     }.bind(this));
   }.bind(this));
 

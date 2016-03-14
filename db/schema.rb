@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160314102526) do
+ActiveRecord::Schema.define(version: 20160314170445) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,10 +22,11 @@ ActiveRecord::Schema.define(version: 20160314102526) do
     t.float    "price"
     t.string   "section"
     t.string   "image_url"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.integer  "view_count",  default: 0, null: false
-    t.integer  "point_count", default: 0, null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "view_count",    default: 0, null: false
+    t.integer  "point_count",   default: 0, null: false
+    t.integer  "average_point", default: 0, null: false
   end
 
   create_table "orders", force: :cascade do |t|
@@ -41,11 +42,11 @@ ActiveRecord::Schema.define(version: 20160314102526) do
   create_table "reviews", force: :cascade do |t|
     t.string   "user_name"
     t.string   "user_avatar"
-    t.integer  "point"
+    t.integer  "point",       default: 0, null: false
     t.string   "content"
     t.integer  "dish_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   add_index "reviews", ["dish_id"], name: "index_reviews_on_dish_id", using: :btree

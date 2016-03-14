@@ -3,7 +3,7 @@ class CreateReviews < ActiveRecord::Migration
     create_table :reviews do |t|
       t.string :user_name
       t.string :user_avatar
-      t.integer :point
+      t.integer :point,  null: false, default: 0
       t.string :content
       t.references :dish, index: true, foreign_key: true
 

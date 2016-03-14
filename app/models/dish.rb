@@ -1,5 +1,5 @@
 class Dish < ActiveRecord::Base
-  has_many :review
+  has_many :reviews
 
   enum section: [
     :espresso,

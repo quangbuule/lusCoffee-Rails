@@ -9,6 +9,9 @@
           .dish-info
             .h2
               = @dish.name
+              %span.stars
+                - (1..@dish.average_point.to_i).each do |_|
+                  %i.fa.fa-star.star
               .view-count
                 %i.fa.fa-mouse-pointer
                 = @dish.view_count
@@ -25,6 +28,15 @@
           = @dish.description
         = render partial: "dishes/review_box", locals: {review: @review}
         .reviews
+          - @dish.reviews.each do |review|
+            .review
+              .user-name
+                = review.user_name
+                .stars
+                  - (1..review.point).each do |_|
+                    %i.fa.fa-star.star
+              .content
+                = review.content
 :javascript
   new DishComponent(document.getElementById('show-dish'))
 = render partial: "portal/order_button"
