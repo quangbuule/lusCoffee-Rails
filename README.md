@@ -4,9 +4,9 @@
 
 Submitted by: **Quangbuu Le**
 
-Time spent: **XX** hours spent in total
+Time spent: **20** hours spent in total
 
-URL: **heroku-app-url**
+URL: http://103.47.192.73:3000/
 
 ## User Stories
 
@@ -47,8 +47,7 @@ URL: **heroku-app-url**
 * [ ] The Restaurant (you) receives an email or SMS when a User places an order. Try Twilio if you’d like a SMS API. Use Promo Code CodeSchool15 for $30 free credit.
 
 The following **additional** features are implemented:
-
-* [ ] Something nice you added.
+  .__.
 
 The following **known issues**:
 

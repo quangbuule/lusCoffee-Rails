@@ -1,4 +1,6 @@
 class Dish < ActiveRecord::Base
+  has_many :review
+
   enum section: [
     :espresso,
     :ice_blended,

@@ -1,0 +1,19 @@
+.review-box
+  .reply-box
+    .h5 Your review
+    .point
+      %i.fa.fa-star.star
+      %i.fa.fa-star.star
+      %i.fa.fa-star.star
+      %i.fa.fa-star.star
+      %i.fa.fa-star.star
+    .comment-box
+      = form_for review, url: url_for(controller: :dishes, action: :review) do |f|
+        .form-group
+          = f.text_field :user_name, placeholder: "Your name", class: "form-control"
+        .form-group
+          = f.text_area :content, placeholder: "Your review", class: "form-control"
+        = f.hidden_field :dish_id
+        = f.submit "Post review", class: "btn btn-primary"
+:javascript
+  new ReviewBoxComponent(Array.prototype.slice.call(document.querySelectorAll('.review-box'), -1)[0])

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   post '/order#success' => 'orders#create'
 
   get '/:id' => 'dishes#show'
-  resources :dishes
+  post '/:id/review' => 'dishes#review'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

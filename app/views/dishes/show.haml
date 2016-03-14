@@ -21,9 +21,10 @@
               %button.btn.btn-secondary.eliminate-btn{:type => "button"} -
               %input.count-txt.form-control{:type => "text", readonly: true}
               %button.btn.btn-secondary.add-btn{:type => "button"} +
-
         .description
           = @dish.description
+        = render partial: "dishes/review_box", locals: {review: @review}
+        .reviews
 :javascript
   new DishComponent(document.getElementById('show-dish'))
 = render partial: "portal/order_button"
