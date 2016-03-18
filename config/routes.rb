@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/contact-us' => 'portal#contact_us'
   get '/order' => 'orders#show'
   get '/order/success' => 'orders#success'
-  post '/order#success' => 'orders#create'
+  post '/order' => 'orders#create'
 
   get '/:id' => 'dishes#show'
   post '/:id/review' => 'dishes#review'

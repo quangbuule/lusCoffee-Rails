@@ -39,8 +39,8 @@ URL: http://103.47.192.73:3000/
 
 * [ ] User can also filter by type of Cuisine.
 * [x] User can see how many times each menu item has been viewed, and sort items by “most viewed”.
-* [ ] User can leave a review (1-5 stars) for each dish, along with a text review.
-* [ ] User can see reviews and an average review score.
+* [x] User can leave a review (1-5 stars) for each dish, along with a text review.
+* [x] User can see reviews and an average review score.
 * [ ] User can input "CODERSCHOOL" as a coupon code on the order page, which should give a 50% discount off of the order.
 * [x] User can order more than one dish at a time.
 * [ ] User receives an email upon placing an order.
@@ -57,7 +57,7 @@ The following **known issues**:
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](path-to-your-GIF-file)
+![Video Walkthrough](http://i.imgur.com/B7AXcEX.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 

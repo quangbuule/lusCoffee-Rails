@@ -20,7 +20,7 @@ class OrdersController < ApplicationController
 
   private
     def order_params
-      params.require(:order).permit(:customer_name, :customer_phone, :customer_address)
+      params.require(:order).permit(:customer_name, :customer_email, :customer_phone, :customer_address)
     end
 
     def dishes_params
